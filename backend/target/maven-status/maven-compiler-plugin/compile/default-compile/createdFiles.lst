@@ -1,0 +1,7 @@
+at\technikumwien\customer\CustomersResource.class
+at\technikumwien\customer\CustomersResourceApplication.class
+at\technikumwien\customer\CustomersServlet.class
+at\technikumwien\customer\CORSFilter.class
+at\technikumwien\customer\CustomersService.class
+at\technikumwien\customer\EntityNotFoundExceptionMapper.class
+at\technikumwien\customer\Customers.class

@@ -1,0 +1,1 @@
+D:\wildfly-17.0.1.Final\bin\jboss-cli.bat --file=configure-wildfly.cli
