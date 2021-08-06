@@ -1,0 +1,37 @@
+<div class="form-group-md-12">
+  <label for="lastName"></label>
+  <input type="text" id="lastName" placeholder="Filter List by Last Name" [(ngModel)]="searchTerm"
+         [ngModelOptions]="{standalone: true}">
+</div>
+<table class="table">
+  <thead class="thead-light">
+  <tr>
+    <th scope="col">ID</th>
+    <th scope="col">First Name</th>
+    <th scope="col">Last Name</th>
+    <th scope="col">Date Of Birth</th>
+    <th scope="col">Activated</th>
+    <th>
+      <button class="btn btn-success" type="button" (click)="onAddCustomers()">Add Customer</button>
+    </th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let customers of customersList | filter:searchTerm">
+    <td> {{ customers.id }}</td>
+    <td> {{ customers.firstName }}</td>
+    <td> {{ customers.secondName }}</td>
+    <td> {{ customers.dateOfBirth }}</td>
+    <td> {{ customers.activated }}</td>
+    <td>
+      <span class="caret" (click)="hideElement = !hideElement"></span>
+      <div *ngIf="hideElement">
+        <button class="btn btn-primary btn-sm" type="button" (click)="onEditCustomers(customers.id)">Edit
+          <span class="glyphicon glyphicon-pencil"></span></button>
+        <button class="btn btn-danger btn-sm" type="button" (click)="onDeleteCustomers(customers.id)">Delete
+          <span class="glyphicon glyphicon-trash"></span></button>
+      </div>
+    </td>
+  </tr>
+  </tbody>
+</table>

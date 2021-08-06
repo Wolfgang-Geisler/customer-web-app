@@ -1,0 +1,29 @@
+<div *ngIf="customers">
+  <h2>{{ customers.id ? 'Edit Customer' : 'Add Customer' }}</h2>
+  <p *ngIf="customers.id">
+    <label>ID:</label>
+    <input type="number" readonly [value]="customers.id"/>
+  </p>
+  <p>
+    <label>First Name:</label>
+    <input type="text" [(ngModel)]="customers.firstName"/>
+  </p>
+  <p>
+    <label>Last Name:</label>
+    <input type="text" [(ngModel)]="customers.secondName"/>
+  </p>
+  <p>
+    <label>Date of Birth:</label>
+    <input type="date" [(ngModel)]="customers.dateOfBirth"/>
+  </p>
+  <p>
+    <label>Activated:</label>
+    <input type="checkbox" [(ngModel)]="customers.activated"/>
+  </p>
+  <div class="row">
+    <div class="col-md-12">
+      <button class="btn btn-success" type="submit" (click)="onFinishWithOk()">OK</button>
+      <button class="btn btn-danger" type="button" (click)="onFinishWithCancel()">Cancel</button>
+    </div>
+  </div>
+</div>

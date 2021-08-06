@@ -1,0 +1,8 @@
+<div class="row">
+  <div class="col-md-12">
+    <h1>Customers Application</h1>
+  </div>
+</div>
+<hr>
+<app-customers-list #list (choose)="selectCustomers($event)"></app-customers-list>
+<app-customers-input [customers]="selectedCustomers" (ok)="list.refresh()"></app-customers-input>
